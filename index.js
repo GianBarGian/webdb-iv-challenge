@@ -1,13 +1,14 @@
 const express = require('express');
 const helmet = require('helmet');
-const knex = require('knex');
-const knexConfig = require('./knexfile').development;
+const recipes = require('./routes/recipes/recipes');
 
-const db = knex(knexConfig);
 const app = express();
+
 
 app.use(helmet());
 app.use(express.json());
+
+app.use(recipes)
 
 //app.use(errors.defaultError);
 
