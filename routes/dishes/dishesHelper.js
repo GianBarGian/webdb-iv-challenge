@@ -1,4 +1,6 @@
-const db = require('../../knexfile');
+const knex = require('knex')
+const knexConfig = require('../../knexfile').development;
+const db = knex(knexConfig);
 
 const getDishes = () => {
     db('dishes')
